@@ -1,0 +1,14 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Position {
+    margin-top: 10px;
+}
+
+.Relation {
+    margin-top: 10px;
+}

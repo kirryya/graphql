@@ -12,7 +12,7 @@ function App() {
                 <SelectCompanyRelation/>
             </div>
             <div className={style.Position}>
-                <SelectCompanyPosition/>
+                <SelectCompanyPosition />
             </div>
             <BasicTextFields/>
             <Multiline/>

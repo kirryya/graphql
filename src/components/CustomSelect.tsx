@@ -6,7 +6,7 @@ type CustomSelectPropsType = {
     label: string
 }
 
-type UsersType = {
+export type UsersType = {
     name: string
     id: number
 }

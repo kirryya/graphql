@@ -1,10 +1,14 @@
-schema: "http://152.228.215.94:83/graphql"
-documents: './src/**/*.tsx'
+schema: "http://152.228.215.94:83/api"
+documents: "./src/queries/**/*.{ts,tsx}"
 generates:
-  graphql/generated.ts:
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.tsx
+      baseTypesPath: types.ts
     plugins:
-      - typescript
-      - typescript-operations
-      - typescript-react-apollo
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
     config:
       withHooks: true

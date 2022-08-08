@@ -18,8 +18,8 @@ export const CustomSelect = (props: CustomSelectPropsType) => {
             disablePortal
             id="combo-box"
             options={props.users}
-            sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label={props.label} />}
+            sx={{width: 300}}
+            renderInput={(params) => <TextField required {...params} label={props.label}/>}
             getOptionLabel={option => option.name}
         />
     );

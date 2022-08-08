@@ -5,7 +5,7 @@ import {CustomSelect} from "./CustomSelect";
 
 export const SelectCompanyRelation = () => {
 
-    const [getRelation, {data, loading, error}] = useLazyQuery(GET_RELATION)
+    /*const [getRelation, {data, loading, error}] = useLazyQuery(GET_RELATION)
 
     useEffect(() => {
         if (!loading) {
@@ -17,7 +17,7 @@ export const SelectCompanyRelation = () => {
             )
 
         }
-    }, [getRelation])
+    }, [getRelation])*/
 
     const users = [
         {name: "Artsyom", id: 3},

@@ -7,7 +7,7 @@ interface PositionQuery {
 
 export const GET_POSITION = gql`
   query 
-  getUsers ($id: ID) {
+  getPosition ($id: ID) {
   applicantIndividualCompanyPosition (id: $id) {
     id
     name

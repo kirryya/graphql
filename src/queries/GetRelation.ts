@@ -7,7 +7,8 @@ interface RelationQuery {
 
 
 export const GET_RELATION = gql`
-  query getUsers ($id: ID) {
+  query 
+  getRelation ($id: ID) {
   applicantIndividualCompanyRelation (id: $id) {
     id
     name

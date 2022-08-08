@@ -4,7 +4,7 @@ import {useGetRelationsQuery} from "../generated";
 
 export const SelectCompanyRelation = () => {
 
-    const {data,error, loading} = useGetRelationsQuery();
+    const {data, error, loading} = useGetRelationsQuery();
 
     if (loading) return <h3>Loading...</h3>;
 

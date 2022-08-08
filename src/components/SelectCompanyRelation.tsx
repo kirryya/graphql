@@ -1,7 +1,6 @@
 import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {GET_RELATION} from '../queries/GetRelation';
-
 import {CustomSelect} from "./CustomSelect";
 
 export const SelectCompanyRelation = () => {

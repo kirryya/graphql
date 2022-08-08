@@ -12,7 +12,7 @@ export const SelectCompanyPosition = () => {
         GET_POSITION
     );
 
-    useEffect(() => {
+   /* useEffect(() => {
         if (!loading) {
             setUsers(data.name({
                     variables: {
@@ -22,7 +22,7 @@ export const SelectCompanyPosition = () => {
             )
             )
         }
-    }, [])
+    }, [])*/
 
     return (
         <div>

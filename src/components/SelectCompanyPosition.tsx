@@ -1,6 +1,6 @@
 import React from 'react';
 import {CustomSelect} from "./CustomSelect";
-import {useGetPositionsQuery} from "../../generated";
+import {useGetPositionsQuery} from "../generated";
 
 export const SelectCompanyPosition = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {CustomSelect} from "./CustomSelect";
-import {useGetRelationsQuery} from "../../generated";
+import {useGetRelationsQuery} from "../generated";
 
 export const SelectCompanyRelation = () => {
 
@@ -12,7 +12,7 @@ export const SelectCompanyRelation = () => {
 
     return (
         <div>
-            <CustomSelect users={users} label={"Relation"}/>
+            <CustomSelect users={users} label={"Relation"} multiple={true} />
         </div>
     );
 };

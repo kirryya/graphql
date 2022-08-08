@@ -1,26 +1,32 @@
 import * as React from 'react';
 import {ChangeEvent, KeyboardEvent, useState} from 'react';
 import TextField from '@mui/material/TextField';
+import {Button} from "@mui/material";
 
-export const BasicTextFields = () => {
+export const TextInput = () => {
 
     const [value, setValue] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
     const [errorMessage, setErrorMessage] = useState<string>("")
 
-
     const onClickAddTask = () => {
-        if (value.length >= 5 && value.length <= 10) {
-            console.log(value)
+        if (!value.length) {
+            setError(true)
+            setErrorMessage("Required")
             setValue("")
-            setErrorMessage("")
         } else {
-            if (value.length <= 4) {
-                setError(true)
-                setErrorMessage("Must be more than 5 symbols")
+            if (value.length >= 5 && value.length <= 10) {
+                console.log(value)
+                setValue("")
+                setErrorMessage("")
             } else {
-                setError(true)
-                setErrorMessage("Must be less than 10 symbols")
+                if (value.length <= 4) {
+                    setError(true)
+                    setErrorMessage("Must be more than 5 symbols")
+                } else {
+                    setError(true)
+                    setErrorMessage("Must be less than 10 symbols")
+                }
             }
         }
     }
@@ -37,9 +43,10 @@ export const BasicTextFields = () => {
     }
 
     return (
+        <div>
         <TextField
-            value={value}
             required
+            value={value}
             id="outlined-basic"
             label={error ? errorMessage : "TextInput"}
             variant="outlined"
@@ -48,6 +55,10 @@ export const BasicTextFields = () => {
             onKeyPress={onKeyPressSetTitle}
             sx={{width: 300, marginTop: 1}}
         />
-
+            <Button variant="contained"
+                    onClick={onClickAddTask}
+                   style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', marginTop: '16px', marginLeft: '14px'}}
+            >+</Button>
+        </div>
     );
 }

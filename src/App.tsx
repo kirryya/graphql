@@ -1,19 +1,20 @@
 import React from 'react';
-import style from './App.module.css';
-import {SelectCompanyPosition} from "./components/SelectCompanyPosition";
 import {SelectCompanyRelation} from "./components/SelectCompanyRelation";
-import {BasicTextFields} from "./components/BasicTextField";
-import {Multiline} from "./components/Multiline";
+import {SelectCompanyPosition} from "./components/SelectCompanyPosition";
+import style from "./App.module.css"
+import {TextInput} from "./components/TextInput";
+import {TextArea} from './components/TextArea';
 
 function App() {
+
     return (
         <div className={style.App}>
             <SelectCompanyRelation/>
             <SelectCompanyPosition/>
-            <BasicTextFields/>
-            <Multiline/>
+            <TextInput/>
+            <TextArea/>
         </div>
-    );
+    )
 }
 
 export default App;

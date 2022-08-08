@@ -1,7 +1,7 @@
 schema: "http://152.228.215.94:83/api"
 documents: "./src/queries/**/*.{ts,tsx}"
 generates:
-  generated.ts:
+  src/generated.ts:
     plugins:
       - typescript
       - typescript-operations

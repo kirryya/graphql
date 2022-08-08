@@ -6,29 +6,35 @@ export const BasicTextFields = () => {
 
     const [value, setValue] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
+    const [errorMessage, setErrorMessage] = useState<string>("")
+
 
     const onClickAddTask = () => {
-        if (value.length > 5 && value.length < 10) {
+        if (value.length >= 5 && value.length < 10) {
             console.log(value)
+            setValue("")
+            setErrorMessage("")
         } else {
-            setError(true)
+            if (value.length < 4) {
+                setError(true)
+                setErrorMessage("Must be more than 5")
+            } else {
+                setError(true)
+                setErrorMessage("Must be less than 10")
+            }
         }
-        /*setValue("")*/
     }
 
     const onChangeSetTitle = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
         setError(false)
+        setErrorMessage("")
     }
     const onKeyPressSetTitle = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             onClickAddTask()
         }
     }
-
-    const errorMessage = error
-        ? <div style={{color: "red"}}> Value is require! </div>
-        : null
 
     return (
         <TextField

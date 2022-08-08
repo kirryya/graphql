@@ -1,7 +1,0 @@
-query
-  getUsers ($id: ID) {
-  applicantIndividualCompanyPosition (id: $id) {
-    id
-    name
-  }
-}

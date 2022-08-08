@@ -4,7 +4,7 @@ import {useGetRelationsQuery} from "../generated";
 
 export const SelectCompanyRelation = () => {
 
-    const {data, loading} = useGetRelationsQuery();
+    const {data,error, loading} = useGetRelationsQuery();
 
     if (loading) return <h3>Loading...</h3>;
 
@@ -13,6 +13,7 @@ export const SelectCompanyRelation = () => {
     return (
         <div>
             <CustomSelect users={users} label={"Relation"} multiple={true} />
+            <div>{ error ? error.message : null }</div>
         </div>
     );
 };

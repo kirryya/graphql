@@ -10,13 +10,13 @@ export const TextInput = () => {
     const [errorMessage, setErrorMessage] = useState<string>("")
 
     const onClickAddTask = () => {
-        if (!value.length) {
+        if (!value.length || value.charAt(0) === ' ') {
             setError(true)
             setErrorMessage("Required")
             setValue("")
         } else {
             if (value.length >= 5 && value.length <= 10) {
-                console.log(value)
+                console.log("TextInput: ", value)
                 setValue("")
                 setErrorMessage("")
             } else {
@@ -53,7 +53,7 @@ export const TextInput = () => {
             error={!!errorMessage}
             onChange={onChangeSetTitle}
             onKeyPress={onKeyPressSetTitle}
-            sx={{width: 300, marginTop: 1}}
+            sx={{width: 300, marginTop: 1, marginLeft: 7}}
         />
             <Button variant="contained"
                     onClick={onClickAddTask}

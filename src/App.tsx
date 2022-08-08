@@ -4,16 +4,19 @@ import {SelectCompanyPosition} from "./components/SelectCompanyPosition";
 import style from "./App.module.css"
 import {TextInput} from "./components/TextInput";
 import {TextArea} from './components/TextArea';
+import {Form} from "antd";
 
 function App() {
 
     return (
-        <div className={style.App}>
-            <SelectCompanyRelation/>
-            <SelectCompanyPosition/>
-            <TextInput/>
-            <TextArea/>
-        </div>
+        <Form>
+            <div className={style.App}>
+                <SelectCompanyRelation/>
+                <SelectCompanyPosition/>
+                <TextInput/>
+                <TextArea/>
+            </div>
+        </Form>
     )
 }
 

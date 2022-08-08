@@ -4,7 +4,7 @@ import {useGetPositionsQuery} from "../generated";
 
 export const SelectCompanyPosition = () => {
 
-    const {data, loading} = useGetPositionsQuery();
+    const {data, error, loading} = useGetPositionsQuery();
 
     if (loading) return <h3>Loading...</h3>;
 
@@ -13,6 +13,7 @@ export const SelectCompanyPosition = () => {
     return (
         <div>
             <CustomSelect users={users} label={"Position"}/>
+            <div>{ error ? error.message : null }</div>
         </div>
     );
 

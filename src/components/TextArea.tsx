@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ChangeEvent, KeyboardEvent, useState} from 'react';
+import {ChangeEvent, useState} from 'react';
 import TextField from '@mui/material/TextField';
 import {Button} from "@mui/material";
 
@@ -10,13 +10,13 @@ export const TextArea = () => {
     const [errorMessage, setErrorMessage] = useState<string>("")
 
     const onClickAddTask = () => {
-        if (!value.length) {
+        if (!value.length || value.charAt(0) === ' ') {
             setError(true)
             setErrorMessage("Required")
             setValue("")
         } else {
             if (value.length >= 5 && value.length <= 10) {
-                console.log(value)
+                console.log("TextArea: ",value)
                 setValue("")
                 setErrorMessage("")
             } else {
@@ -36,11 +36,6 @@ export const TextArea = () => {
         setError(false)
         setErrorMessage("")
     }
-    const onKeyPressSetTitle = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            onClickAddTask()
-        }
-    }
 
     return (
         <div>
@@ -53,8 +48,7 @@ export const TextArea = () => {
                 rows={3}
                 error={!!errorMessage}
                 onChange={onChangeSetTitle}
-                onKeyPress={onKeyPressSetTitle}
-                sx={{width: 300, marginTop: 1}}
+                sx={{width: 300, marginTop: 1, marginLeft: 7}}
             />
             <Button variant="contained"
                     onClick={onClickAddTask}

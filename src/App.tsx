@@ -8,12 +8,8 @@ import {Multiline} from "./components/Multiline";
 function App() {
     return (
         <div className={style.App}>
-            <div className={style.Relation}>
-                <SelectCompanyRelation/>
-            </div>
-            <div className={style.Position}>
-                <SelectCompanyPosition />
-            </div>
+            <SelectCompanyRelation/>
+            <SelectCompanyPosition/>
             <BasicTextFields/>
             <Multiline/>
         </div>

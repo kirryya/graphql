@@ -1,28 +1,14 @@
-import {useLazyQuery} from '@apollo/client';
-import React, {useEffect} from 'react';
-import {GET_RELATION} from '../queries/GetRelation';
+import React from 'react';
 import {CustomSelect} from "./CustomSelect";
+import {useGetRelationsQuery} from "../../generated";
 
 export const SelectCompanyRelation = () => {
 
-    /*const [getRelation, {data, loading, error}] = useLazyQuery(GET_RELATION)
+    const {data, loading} = useGetRelationsQuery();
 
-    useEffect(() => {
-        if (!loading) {
-            getRelation({
-                    variables: {
-                        id: 1
-                    }
-                }
-            )
+    if (loading) return <h3>Loading...</h3>;
 
-        }
-    }, [getRelation])*/
-
-    const users = [
-        {name: "Artsyom", id: 3},
-        {name: "Dasha", id: 4},
-    ]
+    let users = data && data.applicantIndividualCompanyRelations?.data
 
     return (
         <div>

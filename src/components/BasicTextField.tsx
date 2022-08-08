@@ -10,17 +10,17 @@ export const BasicTextFields = () => {
 
 
     const onClickAddTask = () => {
-        if (value.length >= 5 && value.length < 10) {
+        if (value.length >= 5 && value.length <= 10) {
             console.log(value)
             setValue("")
             setErrorMessage("")
         } else {
-            if (value.length < 4) {
+            if (value.length <= 4) {
                 setError(true)
-                setErrorMessage("Must be more than 5")
+                setErrorMessage("Must be more than 5 symbols")
             } else {
                 setError(true)
-                setErrorMessage("Must be less than 10")
+                setErrorMessage("Must be less than 10 symbols")
             }
         }
     }
@@ -39,12 +39,14 @@ export const BasicTextFields = () => {
     return (
         <TextField
             value={value}
+            required
             id="outlined-basic"
             label={error ? errorMessage : "TextInput"}
             variant="outlined"
             error={!!errorMessage}
             onChange={onChangeSetTitle}
             onKeyPress={onKeyPressSetTitle}
+            sx={{width: 300, marginTop: 1}}
         />
 
     );

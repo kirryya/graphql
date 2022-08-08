@@ -1,33 +1,14 @@
-import {useLazyQuery} from '@apollo/client';
-import React, {useEffect, useState} from 'react';
-import {GET_POSITION} from '../queries/GetPosition';
-import {CustomSelect, UsersType} from "./CustomSelect";
-
+import React from 'react';
+import {CustomSelect} from "./CustomSelect";
+import {useGetPositionsQuery} from "../../generated";
 
 export const SelectCompanyPosition = () => {
 
-    /*const [users, setUsers] = useState<UsersType[]>([{id: 1, name: "Vitya"}])
+    const {data, loading} = useGetPositionsQuery();
 
-    const [getPosition, {data, error, loading}] = useLazyQuery<any, any>(
-        GET_POSITION
-    );
+    if (loading) return <h3>Loading...</h3>;
 
-    useEffect(() => {
-        if (!loading) {
-            setUsers(data.name({
-                    variables: {
-                        id: 1
-                    }
-                }
-            )
-            )
-        }
-    }, [])*/
-
-    const users = [
-        {name: "Artsyom", id: 3},
-        {name: "Dasha", id: 4},
-    ]
+    let users = data && data.applicantIndividualCompanyPositions?.data
 
     return (
         <div>

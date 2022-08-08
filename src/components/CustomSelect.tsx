@@ -2,13 +2,14 @@ import React from 'react';
 import {Autocomplete, TextField} from "@mui/material";
 
 type CustomSelectPropsType = {
-    users: UsersType[]
+    users: UsersType[] | undefined
     label: string
 }
 
 export type UsersType = {
     name: string
-    id: number
+    id: string
+    __typename?: "ApplicantIndividualCompanyRelation" | "ApplicantIndividualCompanyPosition" | undefined
 }
 
 
@@ -18,7 +19,7 @@ export const CustomSelect = (props: CustomSelectPropsType) => {
             disablePortal
             id="combo-box"
             options={props.users}
-            sx={{width: 300}}
+            sx={{width: 300, marginTop: 1}}
             renderInput={(params) => <TextField required {...params} label={props.label}/>}
             getOptionLabel={option => option.name}
         />

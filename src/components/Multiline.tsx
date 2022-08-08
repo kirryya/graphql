@@ -9,7 +9,7 @@ export const Multiline = () => {
 
 
     const onClickAddTask = () => {
-        if (value.length >= 5 && value.length < 10) {
+        if (value.length >= 5 && value.length <= 10) {
             console.log(value)
             setValue("")
             setErrorMessage("")
@@ -38,6 +38,7 @@ export const Multiline = () => {
     return (
         <div>
             <TextField
+                required
                 id="outlined-multiline-static"
                 label={error ? errorMessage : "TextArea"}
                 multiline
@@ -45,6 +46,7 @@ export const Multiline = () => {
                 error={!!errorMessage}
                 onChange={onChangeSetTitle}
                 onKeyPress={onKeyPressSetTitle}
+                sx={{width: 300, marginTop: 1}}
             />
         </div>
     );
